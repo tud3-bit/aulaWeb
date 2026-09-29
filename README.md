@@ -1,4 +1,4 @@
-# aulaWeb - Plataforma de Aprendizagem e Questões Web
+# Plataforma de Aprendizagem e Questões Web
 
 Bem-vindo ao repositório do projeto **aulaWeb**. Esta aplicação foi desenvolvida para apoiar aulas e práticas de programação, oferecendo um ambiente interativo para resolução de questões nas linguagens HTML, PHP e Python, integrado com uma interface estilizada e materiais de experiência do usuário (UX).
 
