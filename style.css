@@ -1,0 +1,65 @@
+:root{
+  --fundo:#eef2f7; --papel:#fff; --texto:#1c2733; --suave:#5b6b7b; --linha:#d5dde6;
+  --editor:#1e2a3a; --editor-texto:#dbe6f3;
+  --facil:#1f8a5b; --inter:#b7791f; --dificil:#c0392b;
+  --certo:#e6f5ed; --errado:#fdeceb; --foco:#2b6cb0;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:1rem}
+body{margin:0;background:var(--fundo);color:var(--texto);
+  font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:2rem 1rem 4rem}
+h1{font-size:2rem;margin:0 0 .25rem;letter-spacing:-.02em}
+header p{margin:0 0 1rem;color:var(--suave)}
+
+nav{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.5rem}
+nav a{padding:.35rem .9rem;border:1.5px solid var(--linha);border-radius:999px;
+  background:var(--papel);color:var(--texto);text-decoration:none;font-size:.95rem}
+nav a.ativo{background:var(--texto);border-color:var(--texto);color:#fff}
+nav a:focus-visible,button:focus-visible,summary:focus-visible,.refazer:focus-visible{outline:3px solid var(--foco);outline-offset:2px}
+
+.placar{padding:1rem 1.25rem;margin-bottom:1.25rem;border-radius:10px;
+  background:var(--papel);border-left:6px solid var(--inter);font-size:1.1rem}
+.placar.perfeito{border-left-color:var(--facil)}
+
+.questao{background:var(--papel);border:1.5px solid var(--linha);border-radius:10px;
+  padding:1.1rem 1.25rem;margin-bottom:1.25rem}
+.questao.certo{background:var(--certo);border-color:var(--facil)}
+.questao.errado{background:var(--errado);border-color:var(--dificil)}
+
+.topo{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+h2{font-size:1.05rem;margin:0 0 .75rem}
+.selo{flex:none;padding:.15rem .7rem;border-radius:999px;font-size:.85rem;font-weight:600;color:#fff}
+.selo.facil{background:var(--facil)}
+.selo.intermediario{background:var(--inter)}
+.selo.dificil{background:var(--dificil)}
+nav a.facil.ativo{background:var(--facil);border-color:var(--facil)}
+nav a.intermediario.ativo{background:var(--inter);border-color:var(--inter)}
+nav a.dificil.ativo{background:var(--dificil);border-color:var(--dificil)}
+
+pre{margin:0;padding:1rem;background:var(--editor);color:var(--editor-texto);
+  border-radius:8px;overflow-x:auto;tab-size:4}
+code{font:.95rem/1.7 ui-monospace,"Cascadia Code",Consolas,Menlo,monospace}
+pre input{font:inherit;color:#fff;background:#0f1824;border:0;border-bottom:2px dashed #7fb0e6;
+  padding:0 .3rem;margin:0 .1rem;width:9ch;text-align:center;border-radius:3px}
+pre input:focus{outline:2px solid #7fb0e6;border-bottom-style:solid}
+
+.msg{margin:.75rem 0 0;font-weight:600}
+.msg.certo{color:var(--facil)}
+.msg.errado{color:var(--dificil)}
+.msg code{background:#fff;padding:.1rem .4rem;border-radius:4px;color:var(--texto)}
+
+details{margin-top:.75rem;color:var(--suave)}
+summary{cursor:pointer;width:max-content}
+details p{margin:.4rem 0 0}
+
+.acoes{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+button{font:inherit;font-weight:600;padding:.7rem 1.6rem;border:0;border-radius:8px;
+  background:var(--foco);color:#fff;cursor:pointer}
+button:hover{background:#245a94}
+.refazer{color:var(--foco);font-weight:600}
+
+@media (max-width:480px){
+  .topo{flex-direction:column;gap:.4rem}
+  h1{font-size:1.6rem}
+}
